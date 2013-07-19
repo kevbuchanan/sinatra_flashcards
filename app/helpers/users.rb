@@ -4,6 +4,6 @@ helpers do
   end
 
   def logged_in?
-    @current_user.id != 1
+    current_user.id != 1
   end
 end
