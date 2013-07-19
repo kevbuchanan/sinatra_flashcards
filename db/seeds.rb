@@ -8,6 +8,12 @@ end
 
 Deck.create(title: "Russian_Quiz", user_id: 1, cards: my_deck)
 
+# create Guest User
+User.create(name:"Guest", email:"guest@example.com", password:"guest", password_confirmation:"guest")
+
+
+
+
 # User.create(name:"Kevin the Gray", password:"7", password_confirmation: "7")
 
 # Round.create(deck_id: 1)

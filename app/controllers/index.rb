@@ -1,6 +1,8 @@
 get '/' do
   # Look in app/views/index.erb
   # by default, need guest user (user.id = 1)
+  session[:user_id] = 1 unless logged_in?
+  
   erb :index
 end
 
