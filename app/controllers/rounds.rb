@@ -8,5 +8,9 @@ end
 
 get '/round/:round_id' do
   @round = Round.find(params[:round_id])
+  @deck = @round.deck
   erb :"round/show"
+end
+
+post '/round/:round_id/card/:card_id' do
 end
