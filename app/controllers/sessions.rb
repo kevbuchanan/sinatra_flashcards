@@ -1,11 +1,5 @@
 enable :sessions
 
-
-post 'users/new/' do
-
-end
-
-
 post '/login' do
   @user = User.authenticate(params[:user][:email], params[:user][:password])
   if @user.valid?
