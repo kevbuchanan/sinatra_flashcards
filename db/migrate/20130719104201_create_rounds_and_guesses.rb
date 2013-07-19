@@ -9,7 +9,9 @@ class CreateRoundsAndGuesses < ActiveRecord::Migration
 
     create_table :guesses do |t|
       t.references :round
+      t.references :card
       t.boolean    :correct, default: false
+      t.string     :user_input
       t.timestamps
     end
   end
