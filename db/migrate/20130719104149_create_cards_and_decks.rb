@@ -8,8 +8,9 @@ class CreateCardsAndDecks < ActiveRecord::Migration
     end
 
     create_table :decks do |t|
-      t.references :user
+      t.references :user, default: 1
       t.string     :title
+      t.string     :description
       t.timestamps
     end
   end
