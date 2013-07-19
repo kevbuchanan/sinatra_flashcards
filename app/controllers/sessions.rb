@@ -13,12 +13,13 @@ post '/login' do
     session[:user_id] = @user.id
     redirect to('/')
   else
-    erb :sign_in
+    @errors = "Invalid Login"
+    erb :index
   end
 end
 
 post '/logout' do
-  sessions[:user_id] = 1
+  session[:user_id] = 1
   redirect to('/')
 end
 
