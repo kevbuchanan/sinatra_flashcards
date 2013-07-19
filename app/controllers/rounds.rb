@@ -1,7 +1,7 @@
 # Round#create
 get '/round/new/deck/:deck_id' do
   # always a current user. (id = 1 is guest_user)
-  round = Round.new(deck: params[:deck_id], user: current_user.id )
+  round = Round.create(deck_id: params[:deck_id], user_id: current_user.id )
 
   redirect redirect to(:"/round/#{round.id}")
 end

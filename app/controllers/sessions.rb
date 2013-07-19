@@ -1,3 +1,5 @@
+enable :sessions
+
 post 'users/new/' do
 
 end
