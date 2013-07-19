@@ -1,0 +1,12 @@
+<% if @user && @user.errors %>
+  <% @user.errors.each do |attr, error| %>
+    <p style="color:red"><%=attr.capitalize%> <%= error %></p>
+  <% end %>
+<% end %>
+<form action='/users/<%=@user.id%>/edit' method='post'> 
+  <input name="user[name]" type="text" value="<%=@user.name%>"><br>
+  <input name="user[email]" type="text" value="<%=@user.email%>"><br>
+  <input name="user[password]" type="password" value="Enter Password"><br>
+  <input name="user[password_confirmation]" type="password" value="Enter Password Confirmation"><br>
+  <input class="btn btn-primary" type="submit" value="submit"><br>
+</form>
