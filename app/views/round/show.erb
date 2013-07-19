@@ -3,8 +3,6 @@
 <h2><%= @deck.title %></h2>
 <p><%= @deck.description %></p>
 
-<form method="post" action="/login">
+<form method="post" action="/round/<%= @round.id %>/get_card">
     <button type="submit" class="btn btn-primary">Start Round</button>
 </form>
-
-</div>

@@ -3,7 +3,7 @@ get '/round/new/deck/:deck_id' do
   # always a current user. (id = 1 is guest_user)
   round = Round.create(deck_id: params[:deck_id], user_id: current_user.id )
 
-  redirect redirect to(:"/round/#{round.id}")
+  redirect redirect to :"/round/#{round.id}"
 end
 
 get '/round/:round_id' do
@@ -12,5 +12,11 @@ get '/round/:round_id' do
   erb :"round/show"
 end
 
-post '/round/:round_id/card/:card_id' do
+post '/round/:round_id/get_card' do
+  redirect to "/round/#{params[:round_id]}/card"
+end
+
+get '/round/:round_id/card' do
+  
+  # round complete
 end
