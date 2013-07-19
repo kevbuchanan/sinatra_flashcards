@@ -1,28 +1,28 @@
 <div class="container-narrow">
 
       <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="muted">Project name</h3>
+        <form class="navbar-form pull-right" method="post" action="/login">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        <h3 class="muted">FlashCards App</h3>
       </div>
 
       <hr>
 
       <div class="jumbotron">
-        <h1>Super awesome marketing speak!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <a class="btn btn-large btn-success" href="#">Sign up today</a>
+        <h1>FlashCards App</h1>
+        <p class="lead">Sign up to track your progress!</p>
+        <a class="btn btn-large btn-success" href="/signup">Sign up today</a>
       </div>
 
       <hr>
 
       <div class="row-fluid marketing">
         <div class="span6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <h4><a href="/deck/1">English/Russian Vocab</a></h4>
+          <p>Beginner Russian/English Vocab (clothing, colors, body parts, etc.)</p>
 
           <h4>Subheading</h4>
           <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
@@ -46,7 +46,7 @@
       <hr>
 
       <div class="footer">
-        <p>&copy; Company 2013</p>
+        <p>by Brett, Kevin, Karst, Joe &copy; GrassHoppers 2013</p>
       </div>
 
     </div> <!-- /container -->
