@@ -18,10 +18,31 @@
   
 </head>
 <body>
-  <%= yield %>
 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+  <div class="container-narrow">
+    <div class="masthead">
+      <form class="navbar-form pull-right" method="post" action="/login">
+            <input class="span2" type="text" placeholder="Email">
+            <input class="span2" type="password" placeholder="Password">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+      <h3 class="muted">FlashCards App</h3>
+    </div>
+
+    <hr>
+
+    <%= yield %>
+
+    <hr>
+
+    <div class="footer">
+      <p>by Brett, Kevin, Karst, Joe &copy; GrassHoppers 2013</p>
+    </div>
+
+  </div> <!-- /container -->
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/application.js"></script>
 </body>
 </html>

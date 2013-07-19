@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
 
   validates :name,  presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true, format: {with: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/}
+  validates :email, presence: true, uniqueness: true, format: {with: /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\z/}
   validates_confirmation_of :password
   before_save :hash_password
 
