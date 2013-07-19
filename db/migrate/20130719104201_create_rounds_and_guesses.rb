@@ -1,9 +1,9 @@
 class CreateRoundsAndGuesses < ActiveRecord::Migration
   def change
     create_table :rounds do |t|
-      t.references :user
+      t.references :user, default: 1
       t.references :deck
-      t.integer    :number_correct
+      t.integer    :number_correct, default: 0
       t.timestamps
     end
 
