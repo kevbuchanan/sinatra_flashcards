@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>FlashCards App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 
+    <head>
+        <title>
+            FlashCards App
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
+        <link rel="stylesheet" href="/css/normalize.css" type="text/css"><!--
     application.css is where you put your styles
   -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-  <link href="/css/application.css" rel="stylesheet">
-  
-</head>
-<body>
-
-  <div class="container-narrow">
-    <div class="masthead">
-      <form class="navbar-form pull-right" method="post" action="/login">
-            <input class="span2" type="text" placeholder="Email">
-            <input class="span2" type="password" placeholder="Password">
-            <button type="submit" class="btn btn-primary">Login</button>
-          </form>
-      <h3 class="muted">FlashCards App</h3>
-    </div>
-
-    <hr>
-
-    <%= yield %>
-
-    <hr>
-
-    <div class="footer">
-      <p>by Brett, Kevin, Karst, Joe &copy; GrassHoppers 2013</p>
-    </div>
-
-  </div> <!-- /container -->
-
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/js/application.js"></script>
-</body>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
+        <link href="/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen" type="text/css">
+        <link href="/css/application.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container-narrow">
+            <div class="masthead">
+                <form class="navbar-form pull-right" method="post" action="/login">
+                    <input class="span2" type="text" placeholder="Email"> <input class="span2" type="password" placeholder="Password"> <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <h3 class="muted">
+                    FlashCards App
+                </h3>
+            </div>
+            <hr>
+            <%= yield %>
+            <hr>
+            <div class="footer">
+                <p>
+                    by Brett, Kevin, Karst, Joe © GrassHoppers 2013
+                </p>
+            </div>
+        </div><!-- /container -->
+        <script src="/js/bootstrap.min.js" type="text/javascript">
+        </script><script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
+        </script><script src="/js/application.js" type="text/javascript">
+        </script>
+    </body>
 </html>
