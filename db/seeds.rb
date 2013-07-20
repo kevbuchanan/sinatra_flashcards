@@ -3,7 +3,7 @@ require 'faker'
 my_deck = []
 
 10.times do |i|
-  my_deck << Card.create( question: "Why Not Zoidberg?", answer: "cause", deck_id: 1)
+  my_deck << Card.create(question: "Why Not Zoidberg?", answer: "cause")
 end
 
 Deck.create(  title: "Russian_Quiz",
