@@ -2,6 +2,11 @@ get '/users/create' do
   erb :"user/create"
 end
 
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :"user/show"
+end
+
 get '/users/:id/edit' do
   if session[:user_id] == params[:id]
     @user = User.find(params[:id])
@@ -9,11 +14,6 @@ get '/users/:id/edit' do
   else
     redirect to('/')
   end
-end
-
-get '/users/:id' do
-  @user = User.find(params[:id])
-  erb :"user/show"
 end
 
 post '/users/create' do
@@ -37,5 +37,3 @@ post '/users/:id/edit' do
     erb :"user/edit"
   end
 end
-
-
