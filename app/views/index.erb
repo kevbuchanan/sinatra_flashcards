@@ -11,14 +11,14 @@
 
 <div class="row-fluid marketing">
   <div class="span6">
-    <% @decks[1..(@decks.size/2)].each do |deck| %>
+    <% @decks[0..(@decks.size/2 - 1)].each do |deck| %>
     <h4><a href="/round/new/deck/<%=deck.id%>"><%=deck.title%></a></h4>
     <p><%=deck.description%></p>
     <% end %>
   </div>
 
   <div class="span6">
-    <% @decks[(@decks.size/2 + 1)..-1].each do |deck| %>
+    <% @decks[(@decks.size/2)..-1].each do |deck| %>
     <h4><a href="/round/new/deck/<%=deck.id%>"><%=deck.title%></a></h4>
     <p><%=deck.description%></p>
     <% end %>
