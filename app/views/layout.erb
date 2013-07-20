@@ -20,7 +20,7 @@
         <div class="container-narrow">
             <div class="masthead">
               <% if current_user == nil || current_user.id == 1 %>
-                <form class="navbar-form pull-right" method="post" action="/login">
+                <form class="form-inline pull-right" method="post" action="/login">
                     <input class="span2" type="text" placeholder="Email" name="user[email]"> <input class="span2" type="password" placeholder="Password" name="user[password]"> <button type="submit" class="btn btn-primary">Login</button>
                 </form>
               <%else%>
