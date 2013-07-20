@@ -1,0 +1,9 @@
+<div class='card'>
+  <p><%=@card.question%></p>
+</div>
+<div class='guess'>
+  <form action='/round/<%=@round.id%>/<%=@card.id%>' method='post'>
+    <input type='text' name='guess' placehoder='Enter your guess'>
+    <input class='btn btn-primary' type='submit' value='Guess'>
+  </form>
+</div>
