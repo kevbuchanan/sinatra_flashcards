@@ -6,8 +6,6 @@ end
 
 get '/deck/:id' do
   # get flashcards by id
-  # @deck = Deck.find(params[:id])
-
   @deck = Deck.find(params[:id])
   erb :"deck/show"
 end
