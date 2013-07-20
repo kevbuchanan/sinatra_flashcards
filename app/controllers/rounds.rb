@@ -13,10 +13,23 @@ get '/round/:round_id' do
 end
 
 post '/round/:round_id/get_card' do
-  redirect to "/round/#{params[:round_id]}/card"
+  redirect to "/round/#{params[:round_id]}/card/:correct"
 end
 
-get '/round/:round_id/card' do
-  
-  # round complete
+post '/round/:round_id/:card_id' do
+  card = Card.find(params[:card_id])
+  correct = params[:guess] == card.answer
+  Guess.create(user_input: params[:guess], round_id: params[:round_id], card_id: params[:card_id], correct: correct)
+  redirect to("/round/#{params[:round_id]}/card/#{correct ? 1 : 0}")
+end
+
+get '/round/:round_id/card/:correct' do
+  @round = Round.find(params[:round_id])
+  @card = @round.next_card
+  @last_guess = params[:correct]
+  if @card
+    erb :"round/guess"
+  else
+    erb :"round/finished"
+  end
 end
