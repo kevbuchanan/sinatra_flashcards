@@ -24,7 +24,7 @@
                     <input class="span2" type="text" placeholder="Email" name="user[email]"> <input class="span2" type="password" placeholder="Password" name="user[password]"> <button type="submit" class="btn btn-primary">Login</button>
                 </form>
               <%else%>
-                <h4 class="welcome"> Welcome <%=current_user.name%></h4>
+                <h4 class="welcome"> Welcome <a href=<%="/users/#{current_user.id}"%>> <%=current_user.name%></a></h4>
               <%end%>
                 <h3 class="muted">
                     <a href='/'>FlashCards App</a>
