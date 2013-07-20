@@ -8,25 +8,17 @@
 
 <div class="row-fluid marketing">
   <div class="span6">
-    <h4><a href="/round/new/deck/1">English/Russian Vocab</a></h4>
-    <p>Beginner Russian/English Vocab (clothing, colors, body parts, etc.)</p>
-
-    <h4>Subheading</h4>
-    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-    <h4>Subheading</h4>
-    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <% @decks[1..(@decks.size/2)].each do |deck| %>
+    <h4><a href="/round/new/deck/<%=deck.id%>"><%=deck.title%></a></h4>
+    <p><%=deck.description%></p>
+    <% end %>
   </div>
 
   <div class="span6">
-    <h4>Subheading</h4>
-    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-    <h4>Subheading</h4>
-    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-    <h4>Subheading</h4>
-    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <% @decks[(@decks.size/2 + 1)..-1].each do |deck| %>
+    <h4><a href="/round/new/deck/<%=deck.id%>"><%=deck.title%></a></h4>
+    <p><%=deck.description%></p>
+    <% end %>
   </div>
 </div>
 
