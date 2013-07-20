@@ -1,17 +1,12 @@
 get '/' do
+<<<<<<< HEAD
+  # Look in app/views/index.erb
+  session[:user_id] = 1 unless logged_in? # by default, need guest user (user.id = 1)
+=======
   @decks = Deck.all
   session[:user_id] = 1 unless logged_in?
+>>>>>>> 2d14ef3fbdb3cd80e0e5f2f7f8d0eebb56b2386d
   erb :index
-end
-
-post '/login' do
-  "Set current_user if user/password valid \
-  rerender index for current_user"
-  redirect to :/
-end
-
-get '/signup' do
-  "Sign up Page"
 end
 
 get '/deck/:id' do

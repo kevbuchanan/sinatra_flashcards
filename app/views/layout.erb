@@ -19,10 +19,15 @@
     <body>
         <div class="container-narrow">
             <div class="masthead">
+              <% if current_user == nil || current_user.id == 1 %>
                 <form class="navbar-form pull-right" method="post" action="/login">
-                    <input class="span2" type="text" placeholder="Email"> <input class="span2" type="password" placeholder="Password"> <button type="submit" class="btn btn-primary">Login</button>
+                    <input class="span2" type="text" placeholder="Email" name="user[email]"> <input class="span2" type="password" placeholder="Password" name="user[password]"> <button type="submit" class="btn btn-primary">Login</button>
                 </form>
+              <%else%>
+                <h4 class="welcome"> Welcome <%=current_user.name%></h4>
+              <%end%>
                 <h3 class="muted">
+              
                     <a href='/'>FlashCards App</a>
                 </h3>
             </div>
