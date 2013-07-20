@@ -25,6 +25,7 @@
                 </form>
               <%else%>
                 <h4 class="welcome"> Welcome <a href=<%="/users/#{current_user.id}"%>> <%=current_user.name%></a></h4>
+                <h4 class="navbar-form pull-right"><a href=<%="/logout"%>>Logout!</a></h4>
               <%end%>
                 <h3 class="muted">
                     <a href='/'>FlashCards App</a>
