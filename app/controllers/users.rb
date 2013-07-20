@@ -27,7 +27,7 @@ post '/users/create' do
   end
 end
 
-post '/users/:id/edit' do 
+post '/users/:id/edit' do
   @user = User.find(params[:id])
   @user.assign_attributes(params[:user])
   if @user.valid?
