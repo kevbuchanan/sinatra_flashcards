@@ -1,1 +1,9 @@
-Deck#show page goes here
+<div id='deck'>
+<h3><%=@deck.title%></h3>
+<form action='/round/new/deck/<%=@deck.id%>' method='get'><input class='btn btn-primary' type='submit' value='Review Deck'></form>
+</div>
+<div id='cards'>
+  <% @deck.cards.order("created_at DESC").each do |card| %>
+    <%= erb :"card/_show", layout: false, locals: {card: card}%>
+  <% end %>
+</div>
