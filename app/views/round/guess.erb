@@ -3,7 +3,9 @@
 <% else %>
   <h3>Incorrect</h3>
 <% end %>
+<div class='well well-large'>
 <p>Answer: <%=@guess.card.answer%></p>
+</div>
 <form action='/round/<%=@round.id%>/card' method='get'>
   <input class='btn btn-primary' type='submit' value='Next Card'>
 </form>

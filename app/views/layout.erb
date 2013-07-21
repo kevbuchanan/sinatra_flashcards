@@ -24,8 +24,8 @@
                     <input class="span2" type="text" placeholder="Email" name="user[email]"> <input class="span2" type="password" placeholder="Password" name="user[password]"> <button type="submit" class="btn btn-primary">Login</button>
                 </form>
               <%else%>
-                <h4 class="welcome"> Welcome <a href=<%="/users/#{current_user.id}"%>> <%=current_user.name%></a></h4>
-                <form class="form-inline pull-right" method="post" action="/logout">
+                <h4 class="welcome">Welcome <a href=<%="/users/#{current_user.id}"%>> <%=current_user.name%></a></h4>
+                <form class="form-inline pull-right" method="post" action="/logout"><button type='submit' class='btn btn-primary'>Logout</button></form>
               <%end%>
                 <h3 class="muted">
                     <a href='/'>FlashCards App</a>

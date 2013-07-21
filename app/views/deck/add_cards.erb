@@ -1,0 +1,10 @@
+<h3>Creating '<%=@deck.title%>'</h3>
+<form action="/deck/<%=@deck.id%>" method='get'><input class='btn btn-primary' type='submit' value='Finished'></form>
+<div id='create-deck'>
+<form id='add-card' action='/deck/<%=@deck.id%>/addcard' method='get'><input class='btn btn-primary' type='submit' value='Add Card'></form>
+</div>
+<div id='new_cards'>
+  <% @deck.cards.order("created_at DESC").each do |card| %>
+    <%= erb :"card/_show", layout: false, locals: {card: card}%>
+  <% end %>
+</div>
