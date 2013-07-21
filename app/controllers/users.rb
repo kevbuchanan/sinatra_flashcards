@@ -21,7 +21,7 @@ post '/users/create' do
   if @user.valid?
     @user.save
     session[:user_id] = @user.id
-    redirect to ("/users/#{@user.id}")
+    redirect to("/users/#{@user.id}")
   else
     erb :"user/create"
   end
