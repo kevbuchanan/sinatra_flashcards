@@ -1,0 +1,7 @@
+<div id='create-card'>
+  <form id='submit-create' action='/deck/<%=@deck.id%>/addcard' method='post'>
+    <input type='text' name='card[question]' placeholder='Question'><br>
+    <input type='text' name='card[answer]' placeholder='Answer'>
+    <input class='btn btn-primary' type='submit' value='Create'>
+  </form>
+</div>
