@@ -11,7 +11,7 @@ class Round < ActiveRecord::Base
       0
     end
   end
-  
+
   def next_card
     cards = self.cards.reject do |card|
       self.guesses.where('correct = ?', true).map(&:card_id).include?(card.id)
