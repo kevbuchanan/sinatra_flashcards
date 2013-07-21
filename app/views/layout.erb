@@ -19,18 +19,21 @@
     <body>
         <div class="container-narrow">
             <div class="masthead">
-              <% if current_user == nil || current_user.id == 1 %>
+              <% if !logged_in? %>
                 <form class="form-inline pull-right" method="post" action="/login">
                     <input class="span2" type="text" placeholder="Email" name="user[email]"> <input class="span2" type="password" placeholder="Password" name="user[password]"> <button type="submit" class="btn btn-primary">Login</button>
                 </form>
               <%else%>
                 <h4 class="welcome"> Welcome <a href=<%="/users/#{current_user.id}"%>> <%=current_user.name%></a></h4>
-                <h4 class="navbar-form pull-right"><a href=<%="/logout"%>>Logout!</a></h4>
+                <form class="form-inline pull-right" method="post" action="/logout">
               <%end%>
                 <h3 class="muted">
                     <a href='/'>FlashCards App</a>
                 </h3>
             </div>
+                <% if @error %>
+                    <span class='text-error pull-right'><%=@error%></span>
+                <% end %>
             <hr>
             <%= yield %>
             <hr>
