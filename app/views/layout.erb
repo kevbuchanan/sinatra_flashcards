@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            FlashCards App
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 
+  <head>
+    <title>
+      FlashCards App
+    </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-        <link rel="stylesheet" href="/css/normalize.css" type="text/css"><!--
+      <link rel="stylesheet" href="/css/normalize.css" type="text/css"><!--
     application.css is where you put your styles
   -->
-        <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
-        <link href="/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen" type="text/css">
-        <link href="/css/application.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="container-narrow">
-            <div class="masthead">
-              <% if !logged_in? %>
-                <form class="form-inline pull-right" method="post" action="/login">
-                    <input class="span2" type="text" placeholder="Email" name="user[email]"> <input class="span2" type="password" placeholder="Password" name="user[password]"> <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-              <%else%>
-                <h4 class="welcome">Welcome <a href=<%="/users/#{current_user.id}"%>> <%=current_user.name%></a></h4>
-                <form class="form-inline pull-right" method="post" action="/logout"><button type='submit' class='btn btn-primary'>Logout</button></form>
-              <%end%>
-                <h3 class="muted">
-                    <a href='/'>FlashCards App</a>
-                </h3>
-            </div>
-                <% if @error %>
-                    <span class='text-error pull-right'><%=@error%></span>
-                <% end %>
-            <hr>
-            <%= yield %>
-            <hr>
-            <div class="footer">
-                <p>
-                    by Brett, Kevin, Karst, Joe © GrassHoppers 2013
-                </p>
-            </div>
+      <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
+      <link href="/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen" type="text/css">
+      <link href="/css/application.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container-narrow">
+      <div class="masthead">
+        <% if !logged_in? %>
+          <form class="form-inline pull-right" method="post" action="/login">
+            <input class="span2" type="text" placeholder="Email" name="user[email]"> <input class="span2" type="password" placeholder="Password" name="user[password]"> <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        <%else%>
+          <h4 class="welcome">Welcome <a href=<%="/users/#{current_user.id}"%>> <%=current_user.name%></a></h4>
+          <form class="form-inline pull-right" method="post" action="/logout"><button type='submit' class='btn btn-primary'>Logout</button></form>
+        <%end%>
+        <h3 class="muted">
+          <a href='/'>FlashCards App</a>
+        </h3>
+        <% if @error %>
+          <span class='text-error pull-right'><%=@error%></span>
+        <% end %>
+        </div>
+        <hr>
+        <%= yield %>
+        <hr>
+        <div class="footer">
+          <p>
+            by Brett, Kevin, Karst, Joe © GrassHoppers 2013
+          </p>
+        </div>
         </div><!-- /container -->
         <script src="/js/bootstrap.min.js" type="text/javascript">
         </script><script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
