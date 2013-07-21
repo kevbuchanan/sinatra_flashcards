@@ -21,7 +21,14 @@ GEM
     backports (3.3.3)
     bcrypt-ruby (3.1.1)
     builder (3.1.4)
+    columnize (0.3.6)
     daemons (1.1.9)
+    debugger (1.6.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.1)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.2)
     diff-lcs (1.2.4)
     eventmachine (1.0.3)
     faker (1.1.2)
@@ -73,6 +80,7 @@ DEPENDENCIES
   activerecord
   activesupport
   bcrypt-ruby
+  debugger
   faker
   pg
   rake (= 10.0.3)

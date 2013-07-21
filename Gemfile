@@ -16,6 +16,7 @@ gem 'activerecord'
 gem 'rake', '10.0.3'
 
 gem 'bcrypt-ruby'
+gem 'debugger'
 
 gem 'shotgun'
 
