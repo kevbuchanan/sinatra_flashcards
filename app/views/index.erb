@@ -1,8 +1,8 @@
 <div class="jumbotron">
   <h1>FlashCards App</h1>
-  <% if current_user == 1 %>
+  <% if !logged_in? %>
   <p class="lead">Sign up to track your progress!</p>
-  <a class="btn btn-large btn-success" href="/signup">Sign up today</a>
+  <a class="btn btn-large btn-success" href="/users/create">Sign up today</a>
   <% else %>
   <% end %>
 </div>
