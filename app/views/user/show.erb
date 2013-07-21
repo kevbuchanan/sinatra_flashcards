@@ -1,16 +1,18 @@
-<h3><%=@user.name%>'s Stats</h3>
 <% if current_user.id == @user.id %>
   <form action='/users/<%=@user.id%>/edit' method='get'><input class='btn btn-primary' type='submit' value='update profile'></form>
 <% end %>
-<table>
-  <thead>
+<h3><%=@user.name%>'s stats</h3>
+<table class='table table-hover'>
+  <tr>
     <th>Deck</th>
+    <th>Date</th>
     <th>Number Correct</th>
-  </thead>
+  </tr>
   <% @user.rounds.each do |round| %>
-  <trow>
+  <tr>
     <td><%=round.deck.title%></td>
+    <td><%=round.updated_at.strftime("%m/%d/%Y")%></td>
     <td><%=round.percentage_correct%>%</td>
-  </trow>
+  </tr>
   <% end %>
 </table>

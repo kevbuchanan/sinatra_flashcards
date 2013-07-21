@@ -1,7 +1,23 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $('#add-card').on('submit', function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    var url = $(this).attr('action');
+    $(this).hide();
+    $.get(url, function(data){
+      $('#create-deck').append(data);
+    });
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#create-deck').on('submit', 'form', function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    var url = $(this).attr('action');
+    var data = $(this).serialize();
+    $.post(url, data, function(response){
+      $('#new_cards').prepend(response);
+    });
+    $(this).remove();
+    $('#add-card').show();
+  });
 });

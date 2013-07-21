@@ -5,7 +5,11 @@ class Round < ActiveRecord::Base
   has_many :guesses, dependent: :destroy
 
   def percentage_correct
-    (self.cards.size.to_f)/ (self.guesses.count * 100).round
+    if self.guesses.count > 0
+      ((self.cards.size) / (self.guesses.count.to_f) * 100).round
+    else
+      0
+    end
   end
 
   def next_card
