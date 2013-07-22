@@ -8,7 +8,7 @@ get '/users/:id' do
 end
 
 get '/users/:id/edit' do
-  if session[:user_id] == params[:id]
+  if params[:id].to_i == session[:user_id]
     @user = User.find(params[:id])
     erb :"user/edit"
   else
